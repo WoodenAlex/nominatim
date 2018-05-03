@@ -26,7 +26,7 @@ export interface INominatimResult {
     osm_type: string;
     boundingbox?: string[4];
     lat: string;
-    lng: string;
+    lon: string;
     display_name: string;
     class: string;
     type: string;
@@ -49,6 +49,26 @@ export interface INominatimResult {
         electronics?: string;
     };
 }
+export interface INominatimReverseParams {
+    format?: 'html' | 'json' | 'xml' | 'jsonv2';
+    json_callback?: string;
+    accept_language?: string;
+    'accept-language'?: string;
+    osm_type?: 'N' | 'W' | 'R';
+    osm_id?: number;
+    lat?: number;
+    lon?: number;
+    zoom?: number;
+    addressdetails?: 0 | 1;
+    email?: string;
+    polygon_geojson?: 1;
+    polygon_kml?: 1;
+    polygon_svg?: 1;
+    polygon_text?: 1;
+    extratags?: 1;
+    namedetails?: 1;
+}
 export declare class NominatimJS {
     static search(params: INominatimParams): Promise<INominatimResult[]>;
+    static reverse(params: INominatimReverseParams): Promise<INominatimResult>;
 }

@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var superagent = require("superagent");
-var NominatimJS = (function () {
+var NominatimJS = /** @class */ (function () {
     function NominatimJS() {
     }
     NominatimJS.search = function (params) {
@@ -54,7 +54,26 @@ var NominatimJS = (function () {
                             params['accept-language'] = params.accept_language;
                         }
                         return [4 /*yield*/, superagent
-                                .get('http://nominatim.openstreetmap.org/search')
+                                .get('https://nominatim.openstreetmap.org/search')
+                                .query(params)
+                                .then(function (res) { return res.body || []; })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    NominatimJS.reverse = function (params) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        params.format = params.format || 'json';
+                        // transform accept-language
+                        if (params.accept_language) {
+                            params['accept-language'] = params.accept_language;
+                        }
+                        return [4 /*yield*/, superagent
+                                .get('https://nominatim.openstreetmap.org/reverse')
                                 .query(params)
                                 .then(function (res) { return res.body || []; })];
                     case 1: return [2 /*return*/, _a.sent()];

@@ -30,7 +30,7 @@ export interface INominatimResult {
   osm_type: string
   boundingbox?: string[4]
   lat: string
-  lng: string
+  lon: string
   display_name: string
   class: string
   type: string
@@ -54,6 +54,26 @@ export interface INominatimResult {
   }
 }
 
+// https://wiki.openstreetmap.org/wiki/Nominatim#Reverse_Geocoding
+export interface INominatimReverseParams {
+    format?: 'html' | 'json' | 'xml' | 'jsonv2';
+    json_callback?: string;
+    accept_language?: string;
+    'accept-language'?: string;
+    osm_type?: 'N' | 'W' | 'R';
+    osm_id?: number;
+    lat?: number;
+    lon?: number;
+    zoom?: number;
+    addressdetails?: 0 | 1;
+    email?: string;
+    polygon_geojson?: 1;
+    polygon_kml?: 1;
+    polygon_svg?: 1;
+    polygon_text?: 1;
+    extratags?: 1;
+    namedetails?: 1;
+}
 
 export class NominatimJS {
 
@@ -71,9 +91,23 @@ export class NominatimJS {
     }
 
     return await superagent
-      .get('http://nominatim.openstreetmap.org/search')
+      .get('https://nominatim.openstreetmap.org/search')
       .query(params)
       .then(res => res.body || []);
   }
+
+    public static async reverse(params: INominatimReverseParams): Promise<INominatimResult> {
+        params.format = params.format || 'json';
+
+        // transform accept-language
+        if (params.accept_language) {
+            params['accept-language'] = params.accept_language;
+        }
+
+        return await superagent
+            .get('https://nominatim.openstreetmap.org/reverse')
+            .query(params)
+            .then(res => res.body || []);
+    }
 
 }

@@ -6,9 +6,13 @@
   "scripts": {
     "test": "jest"
   },
+  "files": [
+    "dist",
+    "index.ts"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/owsas/nominatim.git"
+    "url": "git+https://github.com/grimwoodent/nominatim.git"
   },
   "keywords": [
     "nominatim",
@@ -24,17 +28,17 @@
   "author": "Otherwise SAS",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/owsas/nominatim/issues"
+    "url": "https://github.com/grimwoodent/nominatim/issues"
   },
-  "homepage": "https://github.com/owsas/nominatim#readme",
+  "homepage": "https://github.com/grimwoodent/nominatim#readme",
   "dependencies": {
     "superagent": "^3.5.2"
   },
   "devDependencies": {
     "@types/jest": "^20.0.2",
-    "@types/superagent": "^3.5.2",
+    "@types/superagent": "^3.5.8",
     "jest": "^20.0.4",
     "ts-jest": "^20.0.7",
-    "typescript": "^2.4.1"
+    "typescript": "^2.8.1"
   }
 }

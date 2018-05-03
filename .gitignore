@@ -1,1 +1,22 @@
+# pachage managers
 node_modules
+npm-debug.log
+
+# ide
+nbproject
+.idea
+*.sublime-*
+.vim
+.vimrc
+tags
+.tags
+tmux-*.log
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store

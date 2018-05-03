@@ -22,7 +22,7 @@ NominatimJS.search({
   // do something with results
 }).catch(error => {
   // error ocurred
-})
+});
 
 ```
 
@@ -39,6 +39,21 @@ async function search(){
 ```
 NOTE: To await the response, the call to the API must be written inside an async function
 
+### Example Reverse Geocoding with promises
+
+```js
+const { NominatimJS } = require('nominatim-js');
+
+NominatimJS.reverse({
+  lat: 50,
+  lon: 50,
+}).then(results => {
+  // do something with results
+}).catch(error => {
+  // error ocurred
+});
+
+```
 
 ### More examples 
 

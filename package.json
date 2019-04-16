@@ -1,6 +1,6 @@
 {
-  "name": "nominatim-js",
-  "version": "1.0.1",
+  "name": "nominatim-search",
+  "version": "1.0.2",
   "description": "Unofficial JS SDK for the Nominatim Open Street Map service that allows geocoding and reverse geocoding",
   "main": "dist/index.js",
   "scripts": {
@@ -25,14 +25,14 @@
     "street",
     "map"
   ],
-  "author": "Otherwise SAS",
+  "author": "grimwoodent",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/grimwoodent/nominatim/issues"
   },
   "homepage": "https://github.com/grimwoodent/nominatim#readme",
   "dependencies": {
-    "superagent": "^3.5.2"
+    "superagent": "^5.0.2"
   },
   "devDependencies": {
     "@types/jest": "^20.0.2",

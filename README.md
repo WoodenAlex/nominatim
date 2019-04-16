@@ -6,10 +6,8 @@ Unofficial JS SDK for the Nominatim Open Street Map service that allows geocodin
 
 First, install the SDK
 ``` 
-$> npm install --save nominatim-JS
+$ npm install --save nominatim-search
 ```
-
-Then, use it :). It works with Promises, or can be used with async / await.
 
 ### Example with promises
 
@@ -55,19 +53,6 @@ NominatimJS.reverse({
 
 ```
 
-### More examples 
-
-See examples folder in the repository
-
-## Author
-
-Juan Camilo Guarín Peñaranda  
-Otherwise SAS   
-Colombia  
-
 ## License
 
 MIT
-
-## Support us on Patreon
-[![patreon](./repo/patreon.png)](https://patreon.com/owsas)
